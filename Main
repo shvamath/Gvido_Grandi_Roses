@@ -1,0 +1,23 @@
+program rouse; 
+uses 
+graphABC; 
+var 
+x, y: integer; 
+f,a,n: real; 
+begin 
+clearwindow; 
+window(); 
+writeln('введите значение переменных a и n (a - радиус лепестков. 2*n - количество)'); 
+readln(a,n); 
+clearwindow; 
+f := 0; 
+Line(320, 0, 320, 480); 
+Line(0, 240, 640, 240); 
+while f < 6.28 do 
+begin 
+x := round(320 + a * Sin(n * f) * Cos(f) * 40); 
+y := round(240 - a * Sin(n * f) * Sin(f) * 40); 
+SetPixel(x, y, clred); 
+f := f + 0.0001; 
+end; 
+end.
